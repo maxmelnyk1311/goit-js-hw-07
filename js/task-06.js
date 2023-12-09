@@ -16,11 +16,14 @@ input.addEventListener("input", (event) => {
     create.addEventListener("click", createBoxes);
 
     function createBoxes() {
+      let num = 30;
       let boxesMarkup = "";
       for (let i = 0; i < amount; i++) {
-        boxesMarkup += `<div style="width:30px; height:30px; background-color:${getRandomHexColor()}"></div>`
+        boxesMarkup += `<div style="width:${num}px; height:${num}px; background-color:${getRandomHexColor()}"></div>`
+        num += 10;
       }
       boxes.innerHTML = boxesMarkup;
+      input.value = "";
     }
   }
 });
